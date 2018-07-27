@@ -1,0 +1,59 @@
+<div class="center well well-lg">
+    <form class="form-horizontal" (ngSubmit)="handleSubmit(username.value, password.value)" #loginForm="ngForm" novalidate>
+
+        <div *ngIf="testing == true">
+            Orig : {{modelUser | json}} <br>
+            Form : {{loginForm.value | json}}
+        </div>
+        
+        <div class="form-group">
+            <label class="col-md-offset-2 col-md-1 control-label">Username</label>
+           
+            <div class="col-md-7">
+                <input type="text" 
+                    name="username" 
+                    required
+                    #username = "ngModel"
+                    [ngModel] = "modelUser.username"
+                    class="form-control" 
+                    placeholder="Username" >
+            </div>
+
+            <div *ngIf="username.errors?.required && username.dirty">
+                User name is required
+            </div>
+              
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-offset-2 col-md-1 control-label">Password</label>
+
+            <div class="col-md-7">
+                <input type="password" 
+                    name="password" 
+                    required
+                    #password = "ngModel"
+                    [ngModel] = "modelUser.password" 
+                    class="form-control" 
+                    placeholder="Password">
+            </div>
+
+            <div *ngIf="password.errors?.required && password.dirty">
+                Password is required
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit"  
+                class="btn btn-default"
+                [disabled] = "loginForm.invalid"
+                >Sign in</button>
+            </div>
+        </div>
+    </form>
+
+    <button class="btn btn-default">Forgot Password</button>
+
+</div>

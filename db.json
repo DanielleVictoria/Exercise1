@@ -1,22 +1,24 @@
 {
     "users" : [{
-        "username" : "kxjen",
+
+        "username" : "mandeuk",
         "firstname" : "Jennie",
         "middlename" : "Ruby",
         "lastname" : "Kim",
         "email" : "jennierubyjanekim@samplemail.com",
         "birthdate" : 821721600000,
-        "password" : "kimchichu",
+        "password" : "chichu",
         "mobilenum" : "09059796155",
         "interests" : ["Playing with Kuma and Kai", "Cuddle with Unnie"]
     }, {
-        "username" : "chu__k",
+
+        "username" : "chichu",
         "firstname" : "Jisoo",
         "middlename" : "Chikin",
         "lastname" : "Kim",
         "email" : "jisookim@samplemail.com",
         "birthdate" : 789062400000,
-        "password" : "kimjendeuk",
+        "password" : "mandeuk",
         "mobilenum" : "09059796155",
         "interests" : ["Playing with Dalgomie", "Eating dumplings"]
     }
