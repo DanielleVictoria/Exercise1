@@ -3,17 +3,17 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // from project
-import { UserService } from 'src/app/blogModule/_service/user.service';
-import { User } from 'src/app/blogModule/_models/user';
-
+import { User } from '../../_models/user';
+ 
 @Component({
-  selector: 'accounts-login',
-  styleUrls: ['./accounts.login.component.css'],
-  templateUrl: './accounts.login.component.html'
+  selector: 'login-dumb',
+  styleUrls: ['./login.dumb.component.css'],
+  templateUrl: './login.dumb.component.html'
 })
-export class AccountsLoginComponent implements OnInit {
+export class LoginDumbComponent implements OnInit {
 
   // where to find the certain user
+  @Input()
   users: User[];
   
   // for forms
@@ -22,10 +22,11 @@ export class AccountsLoginComponent implements OnInit {
   // for debuggin
   testing: boolean;
 
+  // emitter for current user 
   @Output()
   currentUserEmitter : EventEmitter<User> = new EventEmitter<User>();
 
-  constructor(private userservice: UserService) {
+  constructor() {
   }
 
   ngOnInit() {
@@ -43,14 +44,10 @@ export class AccountsLoginComponent implements OnInit {
       mobilenum: "",
       interests: ""
     }
-
-    this.userservice.getUsers().subscribe(users => this.users = users);
-
   }
 
   // handle for the submit button, if correct, pass the current user to accounts.component
   handleSubmit(username: string, password: string): void {
-    console.log ("Accounts Login Component : HANDLING SUBMIT : ");
     for (let user of this.users) {
       if (user.username === username && user.password === password) {
         console.log ("Accounts Login Component : USERNAME AND PASSWORD MATCH - USER : " + user.username);
@@ -67,9 +64,9 @@ export class AccountsLoginComponent implements OnInit {
     
   }
 
+  
   // output
   emitUser (user : User) : void {
-    console.log ("Accounts Login Component : EMITTING CURRENT USER TO ACCOUNTS - USER : " + user.username );
     this.currentUserEmitter.emit (user);
   }
 }

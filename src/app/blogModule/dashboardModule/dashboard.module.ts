@@ -1,18 +1,21 @@
 // from angular
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '../../../../node_modules/@angular/platform-browser';
 
 //from project
-import { DashboardComponent } from 'src/app/blogModule/dashboardModule/smartcomponents/dashboard.component';
-
+import { ViewSmartComponent } from './smartcomponents/view.smart.component';
+import { ViewDumbComponent } from './dumbcomponents/view.dumb.component';
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    ViewSmartComponent,
+    ViewDumbComponent
   ],
   imports: [
+    BrowserModule
   ],
   exports : [
-    DashboardComponent
+    ViewSmartComponent
   ],
   providers: [],
 })

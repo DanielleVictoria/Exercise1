@@ -2,12 +2,13 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { BrowserModule } from '../../../node_modules/@angular/platform-browser';
 
 //from project
-import { DashboardModule } from 'src/app/blogModule/dashboardModule/dashboard.module';
-import { PostModule } from 'src/app/blogModule/postModule/post.module';
-import { BlogComponent } from 'src/app/blogModule/blog.component';
-import { AccountsModule } from 'src/app/blogModule/accountsModule/accounts.module';
+import { DashboardModule } from './dashboardModule/dashboard.module';
+import { PostModule } from './postModule/post.module';
+import { BlogComponent } from './blog.component';
+import { AccountsModule } from './accountsModule/accounts.module';
 
 // for bootstraps
 import { ButtonsModule } from 'ngx-bootstrap';
@@ -21,6 +22,7 @@ import { BlogRoutingModule } from '../blog-routing.module';
     // from angular
     HttpClientModule,
     CommonModule,
+    BrowserModule,
 
     // from project
     DashboardModule,

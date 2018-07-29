@@ -3,11 +3,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // from project
-import { AccountsLoginComponent } from 'src/app/blogModule/accountsModule/dumbcomponents/accounts.login.component';
+import { LoginSmartComponent } from './blogModule/accountsModule/smartcomponents/login.smart.component';
+import { ViewSmartComponent } from './blogModule/dashboardModule/smartcomponents/view.smart.component';
+
 
 const routes : Routes = [
   //{path : '', redirectTo = '/accounts/login', pathMatch = ''},
-  {path : 'accounts/login', component : AccountsLoginComponent}
+  {path : '', redirectTo : '/accounts/login', pathMatch : 'full'},
+  {path : 'accounts/login', component : LoginSmartComponent},
+  {path : 'dashboard/view', component : ViewSmartComponent}
+
 ]
 
 @NgModule({

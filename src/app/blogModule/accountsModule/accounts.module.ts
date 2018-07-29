@@ -4,20 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 //from project
-import { AccountsComponent } from 'src/app/blogModule/accountsModule/smartcomponents/accounts.component';
-import { AccountsLoginComponent } from 'src/app/blogModule/accountsModule/dumbcomponents/accounts.login.component';
+import { LoginSmartComponent } from './smartcomponents/login.smart.component';
+import { LoginDumbComponent } from './dumbcomponents/login.dumb.component';
 
 @NgModule({
   declarations: [
-    AccountsComponent,
-    AccountsLoginComponent
+    LoginSmartComponent,
+    LoginDumbComponent
   ],
   imports: [
     FormsModule,
     CommonModule
   ],
   exports : [
-    AccountsComponent
+    LoginSmartComponent
   ],
   providers: [],
 })

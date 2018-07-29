@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 //from project
 import { AppComponent } from './app.component';
-import { BlogModule } from 'src/app/blogModule/blog.module';
+import { BlogModule } from './blogModule/blog.module';
 
 @NgModule({
   declarations: [
