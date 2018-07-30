@@ -13,6 +13,7 @@ import { AccountsModule } from './accountsModule/accounts.module';
 // for bootstraps
 import { ButtonsModule } from 'ngx-bootstrap';
 import { BlogRoutingModule } from '../blog-routing.module';
+import { UserService } from 'src/app/blogModule/_service/user.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { BlogRoutingModule } from '../blog-routing.module';
     HttpClientModule,
     CommonModule,
     BrowserModule,
-
+    
     // from project
     DashboardModule,
     PostModule,
@@ -39,7 +40,8 @@ import { BlogRoutingModule } from '../blog-routing.module';
     BlogComponent
   ],
   providers:  [   
-    HttpClientModule
+    HttpClientModule,
+    UserService
   ],
 })
 

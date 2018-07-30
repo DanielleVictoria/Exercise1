@@ -5,6 +5,7 @@ import { BrowserModule } from '../../../../node_modules/@angular/platform-browse
 //from project
 import { ViewSmartComponent } from './smartcomponents/view.smart.component';
 import { ViewDumbComponent } from './dumbcomponents/view.dumb.component';
+import { PostModule } from 'src/app/blogModule/postModule/post.module';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,12 @@ import { ViewDumbComponent } from './dumbcomponents/view.dumb.component';
     ViewDumbComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    PostModule
   ],
   exports : [
-    ViewSmartComponent
+    ViewSmartComponent,
+    ViewDumbComponent
   ],
   providers: [],
 })

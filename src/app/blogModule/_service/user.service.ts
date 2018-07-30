@@ -7,18 +7,27 @@ import { catchError, map, tap } from 'rxjs/operators';
 //from project
 import { User } from '../_models/user';
 import { Post } from '../_models/post';
+import { BlogModule } from 'src/app/blogModule/blog.module';
 
+// paths
 const USER_API : string = 'http://localhost:3000/users';
 const POST_API : string = 'http://localhost:3000/posts';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class UserService {
 
+  // shared datas
   currentUser : User;
+  users : User[];
+  posts : Post[];
 
   constructor(private httpclient: HttpClient) {
     // Check if httpclient is ok
     console.log("HTTP CLIENT : " + httpclient);
+
+    this.getUsers().subscribe(users => this.users = users);
+    this.getPosts().subscribe(posts => this.posts = posts);
+
   }
 
   //---------------------------USERS-------------------------------------//

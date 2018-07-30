@@ -1,1 +1,6 @@
-<!--view-dumb [currentUser]='currentUser' [allPosts]='allPosts'></view-dumb-->
+<view-dumb 
+    [currentUser]='userservice.currentUser' 
+    [posts]='tempPosts'
+    (typeEmitter)='changePostContent($event)'
+>
+</view-dumb>

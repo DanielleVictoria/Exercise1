@@ -11,8 +11,7 @@ const routes : Routes = [
   //{path : '', redirectTo = '/accounts/login', pathMatch = ''},
   {path : '', redirectTo : '/accounts/login', pathMatch : 'full'},
   {path : 'accounts/login', component : LoginSmartComponent},
-  {path : 'dashboard/view', component : ViewSmartComponent}
-
+  {path : 'dashboard/view', component : ViewSmartComponent},
 ]
 
 @NgModule({
