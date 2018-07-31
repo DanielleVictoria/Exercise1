@@ -1,4 +1,4 @@
-<form class="form-horizontal" (ngSubmit)="handleSubmit(username.value, password.value)" #loginForm="ngForm" novalidate>
+<form class="form-horizontal" (ngSubmit)="handleSubmit(category.value, publish.value, title.value, subtitle?.value, body.value)" #addForm="ngForm" novalidate>
     <div class="panel panel-default">
 
         <div class="panel-heading">
@@ -41,11 +41,11 @@
                 <label class="control-label">Title</label>
 
                 <div>
-                    <input type="text" required #title="ngModel" [ngModel]="modelUser.username" class="form-control" placeholder="Username">
+                    <input type="text" name = "title" required #title="ngModel" [ngModel]="modelPost.title" class="form-control" placeholder="Title">
                 </div>
 
-                <div *ngIf="username.errors?.required && username.dirty">
-                    User name is required
+                <div *ngIf="title.errors?.required && title.dirty">
+                    Title is required
                 </div>
             </div>
 
@@ -53,18 +53,22 @@
                 <label class="control-label">Subtitle</label>
 
                 <div>
-                    <input type="text" name="username" required #username="ngModel" [ngModel]="modelUser.username" class="form-control" placeholder="Username">
+                    <input type="text" name = "subtitle" #subtitle="ngModel" [ngModel]="modelPost.subtitle" class="form-control" placeholder="Subtitle">
                 </div>
             </div>
 
             <div class="form-group col-md-12">
                 <label class="control-label">Body</label>
-                <textarea class="form-control" rows="12" id="comment"></textarea>
+                <textarea class="form-control" rows="12" id="comment" name = "body" required #body="ngModel" [ngModel]="modelPost.body"></textarea>
+            </div>
+
+            <div *ngIf="body.errors?.required && body.dirty">
+                Body is required
             </div>
 
             <div class="form-group ">
                 <div>
-                    <button type="submit" class="btn btn-default col-md-offset-4 col-md-4" [disabled]="loginForm.invalid">Sign in</button>
+                    <button type="submit" class="btn btn-default col-md-offset-4 col-md-4" [disabled]="addForm.invalid">Post</button>
                 </div>
             </div>
 

@@ -4,7 +4,7 @@ export class Post {
     subtitle? : string;
     author : string;    //AUTOMATED
     category : string;
-    date : number;      //AUTOMATED
+    date : string;      //AUTOMATED
     body : string;  
     draft : boolean;
 }

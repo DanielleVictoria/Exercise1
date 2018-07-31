@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 // from project
 import { UserService } from '../../_service/user.service';
 import { User } from 'src/app/blogModule/_models/user';
+import { Post } from '../../_models/post';
 
 @Component({
     selector: 'add-smart',
@@ -22,5 +23,6 @@ export class AddSmartComponent implements OnInit {
 
     ngOnInit() {
         this.currentUser = this.userservice.currentUser;
+
     }
 }

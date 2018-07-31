@@ -1,13 +1,13 @@
 // from angular / rxjs
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+
 
 //from project
 import { User } from '../_models/user';
 import { Post } from '../_models/post';
-import { BlogModule } from 'src/app/blogModule/blog.module';
 
 // paths
 const USER_API: string = 'http://localhost:3000/users';
@@ -22,7 +22,8 @@ export class UserService {
   posts: Post[];
 
   //local
-  private newPath : string = '';
+  private newPath: string = '';
+  private header;
 
   constructor(private httpclient: HttpClient) {
     // Check if httpclient is ok
@@ -42,12 +43,12 @@ export class UserService {
       catchError((error: any) => Observable.throw(error.json)));
   }
 
-  // Get user by a certain key and value
+  // note : somehow not working dont use
   private getUserby(key: string, value: string): Observable<User> {
     return this.httpclient.get<User>(`${USER_API}?${key}=${value}`)
       .pipe(
-      map(response => response),
-      catchError((error: any) => Observable.throw(error.json)));
+        map(response => response),
+        catchError((error: any) => Observable.throw(error.json)));
   }
 
   //---------------------------POSTS-------------------------------------//
@@ -59,12 +60,31 @@ export class UserService {
       catchError((error: any) => Observable.throw(error.json)));
   }
 
-  // Get user by a certain key and value
+  // Get post/posts by inputting an extension to the base POST_API -- note : must improve temporary solution only
   getPostby(path: string): Observable<Post[]> {
     this.newPath = POST_API + path;
     return this.httpclient.get<Post[]>(this.newPath)
       .pipe(
-      map(response => response),
-      catchError((error: any) => Observable.throw(error.json)));
+        map(response => response),
+        catchError((error: any) => Observable.throw(error.json)));
+  }
+
+  // Add a post using HTTP post
+  addPost(post: Post): Observable<Post> {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+    /*
+    return this.http.post(this.url, book, options)
+      .map(this.extractData)
+      .catch(this.handleErrorObservable);
+    */
+
+    return this.httpclient.post<Post>(POST_API, post, httpOptions)
+      .pipe(
+        catchError((error: any) => Observable.throw(error.json)));
   }
 }

@@ -34,12 +34,13 @@ export class LoginDumbComponent implements OnInit {
     this.testing = false;
 
     this.modelUser = {
+      id : 0,
       username: "",
       firstname: "",
       middlename: "",
       lastname: "",
       email: "",
-      birthdate: 0,
+      birthdate: "",
       password: "",
       mobilenum: "",
       interests: ""

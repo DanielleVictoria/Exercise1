@@ -1,15 +1,9 @@
 // from angular
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 
 // from project
 import { UserService } from '../../_service/user.service';
 import { Post } from '../../_models/post';
-import { filter } from 'rxjs/internal/operators/filter';
-import { PostState } from 'src/app/blogModule/_models/poststate';
-
-
 
 @Component({
   selector: 'view-smart',
@@ -34,7 +28,7 @@ export class ViewSmartComponent implements OnInit {
     if (type == "all") {
 
       this.userservice.getPostby(
-        '?draft=false'
+        '?draft=false&&_sort=date&&_order=desc'
       ).subscribe(posts => this.tempPosts = posts);
 
     } else if (type == "myposts") {
@@ -60,7 +54,6 @@ export class ViewSmartComponent implements OnInit {
     newpath = '?';
 
     if (filters[0] != null) {
-      //convert date first
       newpath = newpath.concat('date=' + filters[0] + '&&');
     }
 

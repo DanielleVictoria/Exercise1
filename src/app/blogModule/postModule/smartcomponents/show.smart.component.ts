@@ -1,6 +1,5 @@
 // from angular
 import { Component, OnInit, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 // from project
 import { UserService } from '../../_service/user.service';
