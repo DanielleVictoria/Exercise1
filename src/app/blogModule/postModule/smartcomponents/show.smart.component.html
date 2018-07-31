@@ -1,2 +1,3 @@
-
-<show-dumb [post]='post' [isCurrentUser]='isCurrentUser'></show-dumb>
+<div *ngFor='let post of posts'>
+    <show-dumb [post]='post' [currentUser] = 'currentUser'></show-dumb>
+</div>

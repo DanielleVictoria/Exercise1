@@ -6,6 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 // from project
 import { UserService } from '../../_service/user.service';
 import { Post } from '../../_models/post';
+import { filter } from 'rxjs/internal/operators/filter';
+import { PostState } from 'src/app/blogModule/_models/poststate';
+
 
 
 @Component({
@@ -14,45 +17,72 @@ import { Post } from '../../_models/post';
 })
 export class ViewSmartComponent implements OnInit {
 
-  isUser: boolean;
-  type: string;
-
-  posts: Post[];
+  // posts to show
   tempPosts: Post[];
 
   constructor(
-    private route: ActivatedRoute,
     private userservice: UserService
   ) {
   }
 
   ngOnInit() {
-    this.posts = this.userservice.posts;
     this.changePostContent("all");
   }
 
   // to change the content of the posts
   changePostContent(type: string) {
-    console.log (type);
     if (type == "all") {
-      this.tempPosts = this.posts.filter(
-        post => post.draft == false);
-    }
-    else if (type == "myposts") {
-      this.tempPosts = this.posts.filter(
-        post => post.author == this.userservice.currentUser.username &&
-          post.draft == false);
+
+      this.userservice.getPostby(
+        '?draft=false'
+      ).subscribe(posts => this.tempPosts = posts);
+
+    } else if (type == "myposts") {
+
+      this.userservice.getPostby(
+        '?author=' + this.userservice.currentUser.username +
+        '&&draft=false'
+      ).subscribe(posts => this.tempPosts = posts);
+
     } else if (type == "mydrafts") {
-      this.tempPosts = this.posts.filter(
-        post => post.author == this.userservice.currentUser.username &&
-          post.draft == true);
+
+      this.userservice.getPostby(
+        '?author=' + this.userservice.currentUser.username +
+        '&&draft=true'
+      ).subscribe(posts => this.tempPosts = posts);
     }
+
   }
 
-  filterPostContent (date? : number, author? : string, category? : string) {
-    this.tempPosts = this.tempPosts.filter (
-      post => post.author == author
-    );
-  }
+  filterPostContent(filters: string[]) {
 
+    let newpath: string;
+    newpath = '?';
+
+    if (filters[0] != null) {
+      //convert date first
+      newpath = newpath.concat('date=' + filters[0] + '&&');
+    }
+
+    if (filters[1] != null) {
+      newpath = newpath.concat('author=' + filters[1] + '&&');
+    }
+
+    if (filters[2] != null) {
+      newpath = newpath.concat('category=' + filters[2] + '&&');
+    }
+
+    if (filters[3] != null) {
+      newpath = newpath.concat('_sort=title&&_order=');
+
+      if (filters[3] == "Ascending") {
+        newpath = newpath.concat('asc');
+      } else if (filters[3] == "Descending") {
+        newpath = newpath.concat('desc');
+      }
+    }
+
+    console.log("Filter Path" + newpath);
+    this.userservice.getPostby(newpath).subscribe(posts => this.tempPosts = posts);
+  }
 }

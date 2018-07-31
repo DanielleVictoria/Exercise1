@@ -2,5 +2,7 @@
     [currentUser]='userservice.currentUser' 
     [posts]='tempPosts'
     (typeEmitter)='changePostContent($event)'
+    (filterEmitter)='filterPostContent($event)'
+    (stateEmitter)='changeState($event)'
 >
 </view-dumb>

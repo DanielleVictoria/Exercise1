@@ -1,9 +1,10 @@
 export class Post {
+    id : number;
     title : string;
     subtitle? : string;
-    author : string;
+    author : string;    //AUTOMATED
     category : string;
-    date : number;
-    body : string;
+    date : number;      //AUTOMATED
+    body : string;  
     draft : boolean;
 }

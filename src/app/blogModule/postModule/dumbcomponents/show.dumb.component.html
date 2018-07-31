@@ -10,7 +10,7 @@
         {{post.body}}
         <br>
         <br> Category : {{post.category}}
-        <br> Date Posted : {{post.date | date :'medium'}}
+        <br> Date Posted : {{post.date | date : 'medium'}}
     </div>
 
     <div class="panel-footer">
@@ -19,8 +19,9 @@
         </div>
 
         <div class="text-right" *ngIf='isCurrentUser'>
-            <span class="glyphicon glyphicon-pencil icon"></span>
-            <span class="glyphicon glyphicon-remove icon"></span>
+            
+            <button><span class="glyphicon glyphicon-pencil icon"></span></button>
+            <button><span class="glyphicon glyphicon-remove icon"></span></button>
         </div>
 
     </div>

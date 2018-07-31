@@ -1,77 +1,84 @@
 {
-    "users" : [{
-
-        "username" : "mandeuk",
-        "firstname" : "Jennie",
-        "middlename" : "Ruby",
-        "lastname" : "Kim",
-        "email" : "jennierubyjanekim@samplemail.com",
-        "birthdate" : 821721600000,
-        "password" : "chichu",
-        "mobilenum" : "09059796155",
-        "interests" : ["Playing with Kuma and Kai", "Cuddle with Unnie"]
-    } , {
-
-        "username" : "chichu",
-        "firstname" : "Jisoo",
-        "middlename" : "Chikin",
-        "lastname" : "Kim",
-        "email" : "jisookim@samplemail.com",
-        "birthdate" : 789062400000,
-        "password" : "mandeuk",
-        "mobilenum" : "09059796155",
-        "interests" : ["Playing with Dalgomie", "Eating dumplings"]
+  "users": [
+    {
+      "id": 1,
+      "username": "mandeuk",
+      "firstname": "Jennie",
+      "middlename": "Ruby",
+      "lastname": "Kim",
+      "email": "jennierubyjanekim@samplemail.com",
+      "birthdate": 821721600000,
+      "password": "chichu",
+      "mobilenum": "09059796155",
+      "interests": [
+        "Playing with Kuma and Kai",
+        "Cuddle with Unnie"
+      ]
+    },
+    {
+      "id": 2,
+      "username": "chichu",
+      "firstname": "Jisoo",
+      "middlename": "Chikin",
+      "lastname": "Kim",
+      "email": "jisookim@samplemail.com",
+      "birthdate": 789062400000,
+      "password": "mandeuk",
+      "mobilenum": "09059796155",
+      "interests": [
+        "Playing with Dalgomie",
+        "Eating dumplings"
+      ]
     }
-    ],
-
-    "posts" : [{
-        
-        "title" : "Irene outsold",
-        "author" : "mandeuk",
-        "category" : "PERSONAL",
-        "date" : 821721600000,
-        "body" : "What do I say? Do you ever wonder how fallen angels look like? And I have a working theory, that maybe, just maybe, Bae Irene is not human at all",
-        "draft" : false
-    } , { 
-        "title" : "Seulgi is the best daddy of them all",
-        "subtitle" : "and im not even kidding",
-        "author" : "chichu",
-        "category" : "PERSONAL",
-        "date" : 821721600000,
-        "body" : "Ugh. Such power she holds. I don't even know how i managed to bring myself together. She's so powerful. A woman is crying and that woman is me. Ugh, her mind.",
-        "draft" : false
-    } , {
-        "title" : "I didn't choose the fanfic life",
-        "subtitle" : "it chose me",
-        "author" : "mandeuk",
-        "category" : "PERSONAL",
-        "date" : 821721600000,
-        "body" : "What do I say? Do you ever wonder how fallen angels look like? And I have a working theory, that maybe, just maybe, Bae Irene is not human at all",
-        "draft" : true
-    } , {
-        "title" : "Seulgi is the best daddy of them all",
-        "subtitle" : "and im not even kidding",
-        "author" : "chichu",
-        "category" : "PERSONAL",
-        "date" : 821721600000,
-        "body" : "Ugh. Such power she holds. I don't even know how i managed to bring myself together. She's so powerful. A woman is crying and that woman is me. Ugh, her mind.",
-        "draft" : false
-    } , {
-        "title" : "Seulgi is the best daddy of them all",
-        "subtitle" : "and im not even kidding",
-        "author" : "chichu",
-        "category" : "PERSONAL",
-        "date" : 821721600000,
-        "body" : "Ugh. Such power she holds. I don't even know how i managed to bring myself together. She's so powerful. A woman is crying and that woman is me. Ugh, her mind.",
-        "draft" : false
-    } , {
-        "title" : "Seulgi is the best daddy of them all",
-        "subtitle" : "and im not even kidding",
-        "author" : "chichu",
-        "category" : "PERSONAL",
-        "date" : 821721600000,
-        "body" : "Ugh. Such power she holds. I don't even know how i managed to bring myself together. She's so powerful. A woman is crying and that woman is me. Ugh, her mind.",
-        "draft" : false
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Irene outsold",
+      "author": "mandeuk",
+      "category": "FLUFF",
+      "date": 821721600000,
+      "body": "What do I say? Do you ever wonder how fallen angels look like? And I have a working theory, that maybe, just maybe, Bae Irene is not human at all",
+      "draft": false
+    },
+    {
+      "id": 2,
+      "title": "I should have known that you're trouble",
+      "author": "chichu",
+      "category": "RANT",
+      "date": 821721600000,
+      "body": "Jennie Kim. I hate you so much. ",
+      "draft": false
+    },
+    {
+      "id": 3,
+      "title": "I didn't choose the fanfic life",
+      "subtitle": "it chose me",
+      "author": "mandeuk",
+      "category": "FLUFF",
+      "date": 821721600000,
+      "body": "Fanfic all day. Fanfic every day. Sometimes I write. Sometimes I dont. I write what reality couldn't grasp",
+      "draft": true
+    },
+    {
+      "id": 4,
+      "title": "Seulgi is the best daddy of them all",
+      "subtitle": "and im not even kidding",
+      "author": "chichu",
+      "category": "FLUFF",
+      "date": 821721600000,
+      "body": "Ugh. Such power she holds. I don't even know how i managed to bring myself together. She's so powerful. A woman is crying and that woman is me. Ugh, her mind.",
+      "draft": false
+    },
+    {
+      "id": 5,
+      "title": "I hate Seulgi",
+      "subtitle": "in a gay way",
+      "author": "chichu",
+      "category": "FLUFF",
+      "date": 821721600000,
+      "body": "Sluggie",
+      "draft": true
     }
-    ]
+  ]
 }

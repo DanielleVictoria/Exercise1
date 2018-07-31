@@ -1,22 +1,19 @@
 // from angular
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // from project
 import { UserService } from '../../_service/user.service';
-import { Post } from 'src/app/blogModule/_models/post';
 import { User } from 'src/app/blogModule/_models/user';
 
 @Component({
-    selector: 'show-smart',
-    templateUrl: './show.smart.component.html'
+    selector: 'add-smart',
+    templateUrl: './add.smart.component.html',
 })
-export class ShowSmartComponent implements OnInit {
-    
-    @Input()
-    posts : Post[];
 
-    currentUser : User;
+export class AddSmartComponent implements OnInit {
+
+    currentUser: User;
 
     constructor(
         private userservice: UserService
