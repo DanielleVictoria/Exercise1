@@ -29,6 +29,10 @@ export class LoginDumbComponent implements OnInit {
   @Output()
   currentUserEmitter: EventEmitter<User> = new EventEmitter<User>();
 
+  // emitter for telling the smart component to redirect
+  @Output()
+  forgotPasswordEmitter: EventEmitter<any> = new EventEmitter();
+
   constructor() {
   }
 
@@ -66,7 +70,7 @@ export class LoginDumbComponent implements OnInit {
   }
 
   handleForgotPassword() {
-
+    this.forgotPasswordEmitter.emit();
   }
 
   alert(message: string) {

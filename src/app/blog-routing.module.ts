@@ -5,7 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 // from project
 import { LoginSmartComponent } from './blogModule/accountsModule/smartcomponents/login.smart.component';
 import { ViewSmartComponent } from './blogModule/dashboardModule/smartcomponents/view.smart.component';
-import { ProfileSmartComponent } from 'src/app/blogModule/accountsModule/smartcomponents/profile.smart.component';
+import { ProfileSmartComponent } from './blogModule/accountsModule/smartcomponents/profile.smart.component';
+import { ForgotPasswordSmartComponent } from './blogModule/accountsModule/smartcomponents/forgotPassword.smart.component';
 
 
 const routes : Routes = [
@@ -13,7 +14,7 @@ const routes : Routes = [
   {path : '', redirectTo : '/accounts/login', pathMatch : 'full'},
   {path : 'accounts/login', component : LoginSmartComponent},
   {path : 'dashboard/view', component : ViewSmartComponent},
-  {path : 'profile/:username', component : ProfileSmartComponent}
+  {path : 'forgotpassword', component : ForgotPasswordSmartComponent}
 ]
 
 @NgModule({

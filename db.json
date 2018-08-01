@@ -6,7 +6,7 @@
       "firstname": "Jennie",
       "middlename": "Ruby",
       "lastname": "Kim",
-      "email": "slayjennie@samplemail.com",
+      "email": "jennie@samplemail.com",
       "birthdate": "01/16/1996",
       "password": "chichu",
       "mobilenum": "09059796155"
@@ -20,11 +20,7 @@
       "email": "jisookim@samplemail.com",
       "birthdate": "01/03/1996",
       "password": "mandeuk",
-      "mobilenum": "09059796155",
-      "interests": [
-        "Playing with Dalgomie",
-        "Eating dumplings"
-      ]
+      "mobilenum": "09059796155"
     }
   ],
   "posts": [
@@ -32,8 +28,8 @@
       "id": 1,
       "title": "Irene outsold",
       "author": "mandeuk",
-      "category": "THOUGHTS",
-      "date": "8/1/2018",
+      "category": "FLUFF",
+      "date": "08/01/2018",
       "body": "What do I say? Do you ever wonder how fallen angels look like? And I have a working theory, that maybe, just maybe, Bae Irene is not human at all",
       "draft": false
     },
@@ -42,9 +38,9 @@
       "title": "I should have known that you're trouble",
       "author": "chichu",
       "category": "RANT",
-      "date": "07/15/2018",
-      "body": "Jennie Kim. I hate you so much. ",
-      "draft": false
+      "date": "06/01/2018",
+      "body": "Jennie Kim. I hate you so much. Why are you always clinging on Irene? What about me? I look like Irene",
+      "draft": true
     },
     {
       "id": 3,
@@ -62,8 +58,18 @@
       "subtitle": "and im not even kidding",
       "author": "chichu",
       "category": "FLUFF",
-      "date": "05/12/2018",
+      "date": "08/01/2018",
       "body": "Ugh. Such power she holds. I don't even know how i managed to bring myself together. She's so powerful. A woman is crying and that woman is me. Ugh, her mind.",
+      "draft": false
+    },
+    {
+      "id": 5,
+      "title": "YG can choke",
+      "subtitle": "",
+      "author": "mandeuk",
+      "category": "THOUGHTS",
+      "date": "08/01/2018",
+      "body": "YG can choke. He doesn't value his artists. He doesn't promote them that much. He's wasting TALENT. The nerve of that guy!",
       "draft": false
     }
   ]

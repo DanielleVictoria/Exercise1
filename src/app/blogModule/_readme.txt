@@ -14,9 +14,7 @@ STRUCTURE :
             - Edit Posts                                                    WORKING
 
 Kulang : 
-- Forgot Password
 - Profile pages (interest and birthdate)
-- Body couunt
 - Draft boolean
 ----------------------------------------------------------------------------------------------------------
 
@@ -48,10 +46,7 @@ DESCRIPTION :
 
 ISSUES IN THE PROJECT :
 - Refreshing --> deletes the current user in the service
-- After adding a post or deleting a post, i dont know how to tell the view to
-    show the posts again
-    - maybe one solution is returning a state from the add / delete post
-        to the view but would that be wise?
+- After editing a post or deleting a post, you need to click at home again to see the new results
 - Dates with the same day but with different time are not sorted properly because 
     the dates came from a string datatype
 

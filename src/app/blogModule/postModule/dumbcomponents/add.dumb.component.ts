@@ -3,9 +3,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // from project
-import { User } from 'src/app/blogModule/_models/user';
-import { Post } from 'src/app/blogModule/_models/post';
-import { DateFormatter } from '../../../../../node_modules/ngx-bootstrap';
+import { User } from '../../_models/user';
+import { Post } from '../../_models/post';
+import { DateFormatter } from 'ngx-bootstrap';
 
 @Component({
     selector: 'add-dumb',
@@ -66,9 +66,12 @@ export class AddDumbComponent implements OnInit {
     }
 
     private getDateToday () : string {
+        
         let date = new Date (Date.now());
         let month = date.getMonth() + 1;
-
-        return month.toString() + "/" + date.getDate().toString() + "/" + date.getFullYear()
+        let monthString = month > 9 ? '' + month.toString() : '0' + month.toString();
+        let day = date.getDate() > 9 ? '' + date.getDate().toString() : '0' + date.getDate().toString();
+        
+        return monthString + "/" + day + "/" + date.getFullYear();
     }
 }

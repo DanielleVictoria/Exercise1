@@ -1,16 +1,16 @@
 // from angular
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '../../../../node_modules/@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 
 //from project
 import { ViewSmartComponent } from './smartcomponents/view.smart.component';
 import { ViewDumbComponent } from './dumbcomponents/view.dumb.component';
-import { PostModule } from 'src/app/blogModule/postModule/post.module';
+import { PostModule } from '../postModule/post.module';
 
 import { BsDatepickerModule } from 'ngx-bootstrap';
-import { AccountsModule } from 'src/app/blogModule/accountsModule/accounts.module';
+import { AccountsModule } from '../accountsModule/accounts.module';
 
 @NgModule({
   declarations: [

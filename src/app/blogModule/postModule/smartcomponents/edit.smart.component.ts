@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 
 // from project
 import { UserService } from '../../_service/user.service';
-import { User } from 'src/app/blogModule/_models/user';
+import { User } from '../../_models/user';
 import { Post } from '../../_models/post';
-import { State } from 'src/app/blogModule/_models/state';
+import { State } from '../../_models/state';
 
 @Component({
     selector: 'edit-smart',
@@ -20,6 +20,10 @@ export class EditSmartComponent implements OnInit {
     @Input()
     post : Post;
 
+    // triggers when adding a post is done, then tells the view to show the posts again
+    @Output()
+    finishEmitter : EventEmitter<any> = new EventEmitter();
+
     constructor(
         private userservice: UserService
     ) {
@@ -31,6 +35,7 @@ export class EditSmartComponent implements OnInit {
 
     editPost(post : Post) {
         this.userservice.updatePost(post).subscribe();
+        this.finishEmitter.emit();
     }
 
 

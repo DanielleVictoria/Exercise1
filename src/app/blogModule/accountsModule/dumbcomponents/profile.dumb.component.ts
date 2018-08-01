@@ -32,6 +32,7 @@ export class ProfileDumbComponent implements OnInit {
 
   toggleEditing() {
     this.isEditing = !this.isEditing;
+    console.log (this.isEditing);
   }
 
   // dont forget to add birthdate and ineterests

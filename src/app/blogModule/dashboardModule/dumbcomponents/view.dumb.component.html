@@ -127,10 +127,10 @@
                 <show-smart [posts]='posts' (postToEditEmitter)='handleEditPost($event)'></show-smart>
             </div>
             <div *ngIf='state==stateADDING'>
-                <add-smart></add-smart>
+                <add-smart (finishEmitter) = 'changeState(stateSHOWING)'></add-smart>
             </div>
             <div *ngIf='state==stateEDITING'>
-                <edit-smart [post]='willEdit'></edit-smart>
+                <edit-smart [post]='willEdit' (finishEmitter) = 'changeState(stateSHOWING)'></edit-smart>
             </div>
 
 

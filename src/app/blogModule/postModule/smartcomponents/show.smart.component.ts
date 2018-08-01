@@ -3,8 +3,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 // from project
 import { UserService } from '../../_service/user.service';
-import { Post } from 'src/app/blogModule/_models/post';
-import { User } from 'src/app/blogModule/_models/user';
+import { Post } from '../../_models/post';
+import { User } from '../../_models/user';
 
 @Component({
     selector: 'show-smart',

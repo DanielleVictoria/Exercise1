@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 // from project
 import { User } from '../../_models/user';
 import { Post } from '../../_models/post';
-import { State } from 'src/app/blogModule/_models/state';
+import { State } from '../../_models/state';
 
 @Component({
     selector: 'view-dumb',

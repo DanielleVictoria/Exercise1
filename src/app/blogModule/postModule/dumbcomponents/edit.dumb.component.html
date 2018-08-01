@@ -60,11 +60,19 @@
 
             <div class="form-group col-md-12">
                 <label class="control-label">Body</label>
-                <textarea class="form-control" rows="12" id="comment" name="body" required #body="ngModel" [ngModel]="post.body"></textarea>
+                <textarea class="form-control" rows="12" minlength="100" id="comment" name="body" required #body="ngModel" [ngModel]="post.body"></textarea>
             </div>
 
-            <div *ngIf="body.errors?.required && body.dirty">
+            <div class="form-group col-md-12">
+                Count : {{body.value.length}}
+            </div>
+
+            <div class="form-group col-md-12" *ngIf="body.value.length == 0 && body.errors?.required && body.dirty">
                 Body is required
+            </div>
+
+            <div class="form-group col-md-12" *ngIf="body.value.length < 100 && body.dirty">
+                Body must be 100 characters or more
             </div>
 
             <div class="form-group ">

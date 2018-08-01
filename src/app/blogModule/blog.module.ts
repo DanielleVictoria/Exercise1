@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '../../../node_modules/@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
 //from project
 import { DashboardModule } from './dashboardModule/dashboard.module';
@@ -13,7 +13,7 @@ import { AccountsModule } from './accountsModule/accounts.module';
 // for bootstraps
 import { ButtonsModule } from 'ngx-bootstrap';
 import { BlogRoutingModule } from '../blog-routing.module';
-import { UserService } from 'src/app/blogModule/_service/user.service';
+import { UserService } from './_service/user.service';
 
 @NgModule({
   declarations: [

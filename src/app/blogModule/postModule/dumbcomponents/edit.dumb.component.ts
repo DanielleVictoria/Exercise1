@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 
 // from project
 import { UserService } from '../../_service/user.service';
-import { User } from 'src/app/blogModule/_models/user';
+import { User } from '../../_models/user';
 import { Post } from '../../_models/post';
-import { State } from 'src/app/blogModule/_models/state';
+import { State } from '../../_models/state';
 
 @Component({
     selector: 'edit-dumb',
@@ -44,14 +44,15 @@ export class EditDumbComponent implements OnInit {
             draft: _publish == "DRAFT"
         }
 
-        console.log ("will emit");
         this.editPostEmitter.emit(post);
     }
 
     private getDateToday(): string {
         let date = new Date(Date.now());
         let month = date.getMonth() + 1;
+        let monthString = month > 9 ? '' + month.toString() : '0' + month.toString();
+        let day = date.getDate() > 9 ? '' + date.getDate().toString() : '0' + date.getDate().toString();
 
-        return month.toString() + "/" + date.getDate().toString() + "/" + date.getFullYear().toString();
+        return monthString + "/" + day + "/" + date.getFullYear();
     }
 }
