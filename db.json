@@ -6,14 +6,10 @@
       "firstname": "Jennie",
       "middlename": "Ruby",
       "lastname": "Kim",
-      "email": "jennierubyjanekim@samplemail.com",
+      "email": "slayjennie@samplemail.com",
       "birthdate": "01/16/1996",
       "password": "chichu",
-      "mobilenum": "09059796155",
-      "interests": [
-        "Playing with Kuma and Kai",
-        "Cuddle with Unnie"
-      ]
+      "mobilenum": "09059796155"
     },
     {
       "id": 2,
@@ -22,7 +18,7 @@
       "middlename": "Chikin",
       "lastname": "Kim",
       "email": "jisookim@samplemail.com",
-      "birthdate": "01/03/1995",
+      "birthdate": "01/03/1996",
       "password": "mandeuk",
       "mobilenum": "09059796155",
       "interests": [
@@ -36,8 +32,8 @@
       "id": 1,
       "title": "Irene outsold",
       "author": "mandeuk",
-      "category": "FLUFF",
-      "date": "07/15/2018",
+      "category": "THOUGHTS",
+      "date": "8/1/2018",
       "body": "What do I say? Do you ever wonder how fallen angels look like? And I have a working theory, that maybe, just maybe, Bae Irene is not human at all",
       "draft": false
     },
@@ -46,7 +42,7 @@
       "title": "I should have known that you're trouble",
       "author": "chichu",
       "category": "RANT",
-      "date": "07/14/2018",
+      "date": "07/15/2018",
       "body": "Jennie Kim. I hate you so much. ",
       "draft": false
     },
@@ -56,7 +52,7 @@
       "subtitle": "it chose me",
       "author": "mandeuk",
       "category": "FLUFF",
-      "date": "07/16/2018",
+      "date": "06/12/2018",
       "body": "Fanfic all day. Fanfic every day. Sometimes I write. Sometimes I dont. I write what reality couldn't grasp",
       "draft": true
     },
@@ -66,19 +62,9 @@
       "subtitle": "and im not even kidding",
       "author": "chichu",
       "category": "FLUFF",
-      "date": "07/20/2018",
+      "date": "05/12/2018",
       "body": "Ugh. Such power she holds. I don't even know how i managed to bring myself together. She's so powerful. A woman is crying and that woman is me. Ugh, her mind.",
       "draft": false
-    },
-    {
-      "id": 5,
-      "title": "I hate Seulgi",
-      "subtitle": "in a gay way",
-      "author": "chichu",
-      "category": "FLUFF",
-      "date": "07/25/2018",
-      "body": "Sluggie",
-      "draft": true
     }
   ]
 }

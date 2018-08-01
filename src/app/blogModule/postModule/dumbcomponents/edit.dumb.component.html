@@ -1,10 +1,10 @@
 <form class="form-horizontal" (ngSubmit)="handleSubmit(category.value, publish.value, title.value, body.value, subtitle?.value)"
-    #addForm="ngForm" novalidate>
+    #editForm="ngForm" novalidate>
     <div class="panel panel-default">
 
         <div class="panel-heading">
             <h1 class="panel-title">
-                <b>Add a Post</b>
+                <b>Edit a Post</b>
             </h1>
         </div>
 
@@ -16,7 +16,7 @@
                 </div>
 
                 <div>
-                    <select class="form-control" #category>
+                    <select name="category" class="form-control" #category>
                         <option>FLUFF</option>
                         <option>RANT</option>
                         <option>NEUTRAL</option>
@@ -42,7 +42,7 @@
                 <label class="control-label">Title</label>
 
                 <div>
-                    <input type="text" name="title" required #title="ngModel" [ngModel]="modelPost.title" class="form-control" placeholder="Title">
+                    <input type="text" name="title" required #title="ngModel" [ngModel]="post.title" class="form-control" placeholder="Title">
                 </div>
 
                 <div *ngIf="title.errors?.required && title.dirty">
@@ -54,30 +54,22 @@
                 <label class="control-label">Subtitle</label>
 
                 <div>
-                    <input type="text" name="subtitle" #subtitle="ngModel" [ngModel]="modelPost.subtitle" class="form-control" placeholder="Subtitle">
+                    <input type="text" name="subtitle" #subtitle="ngModel" [ngModel]="post?.subtitle" class="form-control" placeholder="Subtitle">
                 </div>
             </div>
 
             <div class="form-group col-md-12">
                 <label class="control-label">Body</label>
-                <textarea class="form-control" minlength="99" rows="12" id="comment" name="body" required #body="ngModel" [ngModel]="modelPost.body"></textarea>
+                <textarea class="form-control" rows="12" id="comment" name="body" required #body="ngModel" [ngModel]="post.body"></textarea>
             </div>
 
-            <div class="form-group col-md-12">
-                Count : {{body.value.length}}
-            </div>
-
-            <div class="form-group col-md-12" *ngIf="body.errors?.required && body.dirty">
+            <div *ngIf="body.errors?.required && body.dirty">
                 Body is required
-            </div>
-
-            <div class="form-group col-md-12" *ngIf="body.value.length < 100 && body.dirty">
-                Body must be 100 characters or more
             </div>
 
             <div class="form-group ">
                 <div>
-                    <button type="submit" class="btn btn-default col-md-offset-4 col-md-4" [disabled]="addForm.invalid">Post</button>
+                    <button type="submit" class="btn btn-default col-md-offset-4 col-md-4" [disabled]="editForm.invalid">Post</button>
                 </div>
             </div>
 

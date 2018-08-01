@@ -7,18 +7,23 @@ import { CommonModule } from '@angular/common';
 import { LoginSmartComponent } from './smartcomponents/login.smart.component';
 import { LoginDumbComponent } from './dumbcomponents/login.dumb.component';
 import { UserService } from 'src/app/blogModule/_service/user.service';
+import { ProfileDumbComponent } from './dumbcomponents/profile.dumb.component';
+import { ProfileSmartComponent } from './smartcomponents/profile.smart.component';
 
 @NgModule({
   declarations: [
     LoginSmartComponent,
-    LoginDumbComponent
+    LoginDumbComponent,
+    ProfileDumbComponent,
+    ProfileSmartComponent
   ],
   imports: [
     FormsModule,
     CommonModule
   ],
   exports : [
-    LoginSmartComponent
+    LoginSmartComponent,
+    ProfileSmartComponent
   ],
   providers: [
     //UserService

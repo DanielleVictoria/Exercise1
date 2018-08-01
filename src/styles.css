@@ -1,3 +1,7 @@
 .center {
     margin: 100px;
 }
+
+.panel-heading {
+    background-color: #bd5ee0;
+}

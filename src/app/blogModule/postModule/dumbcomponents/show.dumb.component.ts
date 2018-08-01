@@ -1,5 +1,5 @@
 // from angular
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
@@ -20,6 +20,12 @@ export class ShowDumbComponent implements OnInit {
     @Input()
     currentUser: User;
 
+    @Output()
+    deletePostEmitter: EventEmitter<number> = new EventEmitter<number>();
+
+    @Output()
+    editPostEmitter: EventEmitter<Post> = new EventEmitter<Post>();
+
     // returns true if the post belongs to the user
     isCurrentUser: boolean;
 
@@ -29,5 +35,13 @@ export class ShowDumbComponent implements OnInit {
 
     ngOnInit() {
         this.isCurrentUser = this.currentUser.username == this.post.author;
+    }
+
+    handleDeletePost() {
+        this.deletePostEmitter.emit(this.post.id);
+    }
+
+    handleEditPost() {
+        this.editPostEmitter.emit(this.post);
     }
 }

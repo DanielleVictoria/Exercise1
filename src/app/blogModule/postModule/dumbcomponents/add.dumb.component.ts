@@ -19,6 +19,9 @@ export class AddDumbComponent implements OnInit {
     @Input()
     currentUser: User;
 
+    @Output()
+    newPostEmitter : EventEmitter<Post> = new EventEmitter<Post>();
+
     // for forms
     modelPost: Post;
 
@@ -54,8 +57,12 @@ export class AddDumbComponent implements OnInit {
             draft : _publish == "DRAFT"
         }
 
-        console.log (post);
+        this.emitNewPost (post);
 
+    }
+
+    emitNewPost (post : Post) {
+        this.newPostEmitter.emit (post);
     }
 
     private getDateToday () : string {

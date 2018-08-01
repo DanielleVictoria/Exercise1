@@ -20,8 +20,8 @@
 
         <div class="text-right" *ngIf='isCurrentUser'>
             
-            <button><span class="glyphicon glyphicon-pencil icon"></span></button>
-            <button><span class="glyphicon glyphicon-remove icon"></span></button>
+            <button (click) = 'handleEditPost()'><span class="glyphicon glyphicon-pencil icon"></span></button>
+            <button (click) = 'handleDeletePost()'><span class="glyphicon glyphicon-remove icon"></span></button>
         </div>
 
     </div>

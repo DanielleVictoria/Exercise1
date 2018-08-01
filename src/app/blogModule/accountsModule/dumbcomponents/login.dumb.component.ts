@@ -4,10 +4,9 @@ import { CommonModule } from '@angular/common';
 
 // from project
 import { User } from '../../_models/user';
- 
+
 @Component({
   selector: 'login-dumb',
-  styleUrls: ['./login.dumb.component.css'],
   templateUrl: './login.dumb.component.html'
 })
 export class LoginDumbComponent implements OnInit {
@@ -15,16 +14,20 @@ export class LoginDumbComponent implements OnInit {
   // where to find the certain user
   @Input()
   users: User[];
-  
+
+  // alert message
+  message: string;
+  isWrong: boolean = false;
+
   // for forms
   modelUser: User;
-  
+
   // for debuggin
   testing: boolean;
 
   // emitter for current user 
   @Output()
-  currentUserEmitter : EventEmitter<User> = new EventEmitter<User>();
+  currentUserEmitter: EventEmitter<User> = new EventEmitter<User>();
 
   constructor() {
   }
@@ -34,7 +37,7 @@ export class LoginDumbComponent implements OnInit {
     this.testing = false;
 
     this.modelUser = {
-      id : 0,
+      id: 0,
       username: "",
       firstname: "",
       middlename: "",
@@ -51,24 +54,30 @@ export class LoginDumbComponent implements OnInit {
   handleSubmit(username: string, password: string): void {
     for (let user of this.users) {
       if (user.username === username && user.password === password) {
-        console.log ("Accounts Login Component : USERNAME AND PASSWORD MATCH - USER : " + user.username);
+        console.log("Accounts Login Component : USERNAME AND PASSWORD MATCH - USER : " + user.username);
         this.emitUser(user);
         return;
       } else if (user.username === username && user.password !== password) {
-        console.log ("Wrong Password");
+        this.alert("Wrong Password");
+        return;
       }
     }
-    console.log ("Username Does Not Exist");
-  }   
-
-  handleForgotPassword() {
-    
+    this.alert("No username exists" );
   }
 
-  
+  handleForgotPassword() {
+
+  }
+
+  alert(message: string) {
+    this.message = message;
+    this.isWrong = true;
+  }
+
+
   // output
-  emitUser (user : User) : void {
-    this.currentUserEmitter.emit (user);
+  emitUser(user: User): void {
+    this.currentUserEmitter.emit(user);
   }
 }
 

@@ -1,13 +1,14 @@
 // from angular / rxjs
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
 //from project
 import { User } from '../_models/user';
 import { Post } from '../_models/post';
+
 
 // paths
 const USER_API: string = 'http://localhost:3000/users';
@@ -47,8 +48,20 @@ export class UserService {
   private getUserby(key: string, value: string): Observable<User> {
     return this.httpclient.get<User>(`${USER_API}?${key}=${value}`)
       .pipe(
-        map(response => response),
-        catchError((error: any) => Observable.throw(error.json)));
+      map(response => response),
+      catchError((error: any) => Observable.throw(error.json)));
+  }
+
+  updateUser(user: User) {
+    let url = `${USER_API}/${user.id}`;
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.httpclient.put<User>(url, user, httpOptions)
+      .pipe(
+      catchError((error: any) => Observable.throw(error.json)));
   }
 
   //---------------------------POSTS-------------------------------------//
@@ -65,26 +78,48 @@ export class UserService {
     this.newPath = POST_API + path;
     return this.httpclient.get<Post[]>(this.newPath)
       .pipe(
-        map(response => response),
-        catchError((error: any) => Observable.throw(error.json)));
+      map(response => response),
+      catchError((error: any) => Observable.throw(error.json)));
   }
 
   // Add a post using HTTP post
   addPost(post: Post): Observable<Post> {
     let httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json'
+        'Content-Type': 'application/json'
       })
     };
 
-    /*
-    return this.http.post(this.url, book, options)
-      .map(this.extractData)
-      .catch(this.handleErrorObservable);
-    */
-
     return this.httpclient.post<Post>(POST_API, post, httpOptions)
       .pipe(
-        catchError((error: any) => Observable.throw(error.json)));
+      catchError((error: any) => Observable.throw(error.json)));
   }
+
+  deletePost(id: number): Observable<{}> {
+
+    let url = `${POST_API}/${id}`;
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    return this.httpclient.delete(url, httpOptions)
+      .pipe(
+      catchError((error: any) => Observable.throw(error.json)));
+  }
+
+  updatePost(post: Post) {
+    let url = `${POST_API}/${post.id}`;
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.httpclient.put<Post>(url, post, httpOptions)
+      .pipe(
+      catchError((error: any) => Observable.throw(error.json)));
+  }
+
+
 }

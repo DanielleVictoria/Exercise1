@@ -1,5 +1,5 @@
 // from angular
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // from project
@@ -9,13 +9,16 @@ import { Post } from '../../_models/post';
 import { State } from 'src/app/blogModule/_models/state';
 
 @Component({
-    selector: 'add-smart',
-    templateUrl: './add.smart.component.html',
+    selector: 'edit-smart',
+    templateUrl: './edit.smart.component.html',
 })
 
-export class AddSmartComponent implements OnInit {
+export class EditSmartComponent implements OnInit {
 
     currentUser: User;
+
+    @Input()
+    post : Post;
 
     constructor(
         private userservice: UserService
@@ -26,7 +29,9 @@ export class AddSmartComponent implements OnInit {
         this.currentUser = this.userservice.currentUser;
     }
 
-    newPost (post : Post) {
-        this.userservice.addPost (post).subscribe();
+    editPost(post : Post) {
+        this.userservice.updatePost(post).subscribe();
     }
+
+
 }
