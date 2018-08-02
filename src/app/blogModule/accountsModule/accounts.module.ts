@@ -13,6 +13,9 @@ import { ForgotPasswordDumbComponent } from './dumbcomponents/forgotPassword.dum
 import { ForgotPasswordSmartComponent } from './smartcomponents/forgotPassword.smart.component';
 import { BlogRoutingModule } from '../../blog-routing.module';
 
+// for bootstrap
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker/bs-datepicker.module';
+
 @NgModule({
   declarations: [
     LoginSmartComponent,
@@ -25,7 +28,8 @@ import { BlogRoutingModule } from '../../blog-routing.module';
   imports: [
     FormsModule,
     CommonModule,
-    BlogRoutingModule
+    BlogRoutingModule,
+    BsDatepickerModule.forRoot()
   ],
   exports : [
     LoginSmartComponent,

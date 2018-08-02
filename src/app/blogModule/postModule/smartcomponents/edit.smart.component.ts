@@ -38,5 +38,10 @@ export class EditSmartComponent implements OnInit {
         this.finishEmitter.emit();
     }
 
+    deletePost(post: Post) {
+        this.userservice.deletePost(post.id).subscribe();
+        this.finishEmitter.emit();
+    }
+
 
 }

@@ -49,7 +49,7 @@
 <!--||||||||||||||||||||||||||||  PROFILE   |||||||||||||||||||||||||||||||||||||-->
 <div class="container-fluid content">
     <div *ngIf='state==statePROFILE; else post'>
-        <profile-smart [user]='currentUser'></profile-smart>
+        <profile-smart></profile-smart>
     </div>
 
     <ng-template #post> 
@@ -127,10 +127,10 @@
                 <show-smart [posts]='posts' (postToEditEmitter)='handleEditPost($event)'></show-smart>
             </div>
             <div *ngIf='state==stateADDING'>
-                <add-smart (finishEmitter) = 'changeState(stateSHOWING)'></add-smart>
+                <add-smart (finishEmitter) = 'handlePostType("all")'></add-smart>
             </div>
             <div *ngIf='state==stateEDITING'>
-                <edit-smart [post]='willEdit' (finishEmitter) = 'changeState(stateSHOWING)'></edit-smart>
+                <edit-smart [post]='willEdit' (finishEmitter) = 'handlePostType("all")'></edit-smart>
             </div>
 
 

@@ -35,8 +35,8 @@ export class ProfileDumbComponent implements OnInit {
     console.log (this.isEditing);
   }
 
-  // dont forget to add birthdate and ineterests
-  handleSubmit(_username: string, _firstname: string, _middlename: string, _lastname: string, _email: string) {
+  // dont forget to add interests
+  handleSubmit(_username: string, _firstname: string, _middlename: string, _lastname: string, _email: string, _date : string)  {
     let newuser : User = {
       id : this.user.id,
       username : _username,
@@ -44,11 +44,11 @@ export class ProfileDumbComponent implements OnInit {
       middlename : _middlename, 
       lastname : _lastname,
       email : _email,
-      birthdate : this.user.birthdate,
+      birthdate : _date,
       password : this.user.password,
       mobilenum : this.user.mobilenum
 
-      // ADD BIRTHDATE AND INTERESRS HERE
+      // ADD interests HERE
     }
 
     console.log (newuser);

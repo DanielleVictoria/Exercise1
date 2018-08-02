@@ -22,6 +22,9 @@ export class EditDumbComponent implements OnInit {
     @Output()
     editPostEmitter: EventEmitter<Post> = new EventEmitter<Post>();
 
+    @Output()
+    deletePostEmitter : EventEmitter<Post> = new EventEmitter<Post>();
+
     constructor(
     ) {
     }
@@ -54,5 +57,9 @@ export class EditDumbComponent implements OnInit {
         let day = date.getDate() > 9 ? '' + date.getDate().toString() : '0' + date.getDate().toString();
 
         return monthString + "/" + day + "/" + date.getFullYear();
+    }
+
+    handleDeletePost() {
+        this.deletePostEmitter.emit(this.post);
     }
 }

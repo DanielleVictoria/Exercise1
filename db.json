@@ -6,7 +6,7 @@
       "firstname": "Jennie",
       "middlename": "Ruby",
       "lastname": "Kim",
-      "email": "jennie@samplemail.com",
+      "email": "jenniekim@samplemail.com",
       "birthdate": "01/16/1996",
       "password": "chichu",
       "mobilenum": "09059796155"
@@ -21,6 +21,39 @@
       "birthdate": "01/03/1996",
       "password": "mandeuk",
       "mobilenum": "09059796155"
+    },
+    {
+      "id": 3,
+      "username": "baechu",
+      "firstname": "Irene",
+      "middlename": "Joohyun",
+      "lastname": "Bae",
+      "email": "irenebae@samplemail.com",
+      "birthdate": "03/29/1991",
+      "password": "ddeulgi",
+      "mobilenum": "09059796155"
+    },
+    {
+      "id": 4,
+      "username": "ddeulgi",
+      "firstname": "Seulgi",
+      "middlename": "Seul",
+      "lastname": "Kang",
+      "email": "seulgikang@samplemail.com",
+      "birthdate": "03/29/1991",
+      "password": "baechu",
+      "mobilenum": "09059796155"
+    },
+    {
+      "id": 5,
+      "username": "nielle",
+      "firstname": "Danielle",
+      "middlename": "Quinto",
+      "lastname": "Victoria",
+      "email": "daniellevictoria@samplemail.com",
+      "birthdate": "05/15/1998",
+      "password": "blackvelvetslay",
+      "mobilenum": "09059796155"
     }
   ],
   "posts": [
@@ -32,25 +65,6 @@
       "date": "08/01/2018",
       "body": "What do I say? Do you ever wonder how fallen angels look like? And I have a working theory, that maybe, just maybe, Bae Irene is not human at all",
       "draft": false
-    },
-    {
-      "id": 2,
-      "title": "I should have known that you're trouble",
-      "author": "chichu",
-      "category": "RANT",
-      "date": "06/01/2018",
-      "body": "Jennie Kim. I hate you so much. Why are you always clinging on Irene? What about me? I look like Irene",
-      "draft": true
-    },
-    {
-      "id": 3,
-      "title": "I didn't choose the fanfic life",
-      "subtitle": "it chose me",
-      "author": "mandeuk",
-      "category": "FLUFF",
-      "date": "06/12/2018",
-      "body": "Fanfic all day. Fanfic every day. Sometimes I write. Sometimes I dont. I write what reality couldn't grasp",
-      "draft": true
     },
     {
       "id": 4,
@@ -67,9 +81,39 @@
       "title": "YG can choke",
       "subtitle": "",
       "author": "mandeuk",
-      "category": "THOUGHTS",
-      "date": "08/01/2018",
+      "category": "RANT",
+      "date": "08/02/2018",
       "body": "YG can choke. He doesn't value his artists. He doesn't promote them that much. He's wasting TALENT. The nerve of that guy!",
+      "draft": false
+    },
+    {
+      "id": 6,
+      "title": "i love walking",
+      "subtitle": "",
+      "author": "nielle",
+      "category": "NEUTRAL",
+      "date": "08/02/2018",
+      "body": "I walked to work today. And wow. I inhaled so much smoke. SO MUCH SMOKE. We all gonna die early. I'm planting the seed.",
+      "draft": false
+    },
+    {
+      "id": 7,
+      "title": "Is water wet?",
+      "subtitle": "",
+      "author": "ddeulgi",
+      "category": "THOUGHTS",
+      "date": "08/02/2018",
+      "body": "If water is like air for fishes... then is water wet for them? How do they know what's wet or not? Does being in the air the equivalent of us drowning in water? Fishes... i wonder",
+      "draft": false
+    },
+    {
+      "id": 8,
+      "title": "A snake",
+      "subtitle": "",
+      "author": "ddeulgi",
+      "category": "RANT",
+      "date": "08/02/2018",
+      "body": "@mandeuk stop your ass from snaking my girlfriend challenge : failed. \n\n@baechu stop entertainng Jennie Kim because you already have a girlfriend challenge : failed\n\n@chichi stop being whipped for me im not your daddy challenge : failed",
       "draft": false
     }
   ]

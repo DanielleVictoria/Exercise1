@@ -32,7 +32,7 @@ export class ViewDumbComponent implements OnInit {
     // NEEDED VARIABLES
     filters: string[] = [];
     willEdit: Post;
-    viewUser : User;    // user to view profile
+    viewUser: User;    // user to view profile
 
     // STATES
     state: State;

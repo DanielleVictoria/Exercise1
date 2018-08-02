@@ -34,7 +34,7 @@
     </div>
 
     <ng-template #edit>
-        <form class="form-horizontal" (ngSubmit)="handleSubmit(username.value, firstname.value, middlename.value, lastname.value, email.value)"
+        <form class="form-horizontal" (ngSubmit)="handleSubmit(username.value, firstname.value, middlename.value, lastname.value, email.value, date.value)"
             #editForm="ngForm" novalidate>
 
             <div class="panel panel-default">
@@ -117,13 +117,25 @@
                         </div>
                     </div>
 
-                    <!--//////////////////          BIRTHDATE           /////////////////////-->
+                    <!-- DATE PICKER -->
+                    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
 
+                    <div class="form-group col-md-6">
+
+                        <label class="control-label">Birthday</label>
+
+                        <div>
+                            <input type="text" name="date" class="form-control" #date='ngModel' [ngModel]="user.birthdate" bsDatepicker [bsValue]="bsValue"
+                                placement="bottom" [bsConfig]="{ dateInputFormat: 'MM/DD/YYYY' }">
+                        </div>
+                    </div>
+
+                    
                     <!--//////////////////          INTERESTS          /////////////////////-->
 
                     <div class="form-group ">
                         <div class='col-md-12'>
-                            <button type="submit" class="btn btn-default" [disabled]="editForm.invalid">Edit</button>
+                            <button type="submit" class="btn btn-default" [disabled]="editForm.invalid" (click)="toggleEditing()">Edit</button>
                         </div>
                     </div>
 

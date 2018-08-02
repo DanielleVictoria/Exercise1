@@ -1,6 +1,13 @@
-<form class="form-horizontal" (ngSubmit)="handleSubmit(category.value, publish.value, title.value, body.value, subtitle?.value)"
-    #editForm="ngForm" novalidate>
-    <div class="panel panel-default">
+<div class="panel panel-default">
+
+    <div>
+        <button (click)='handleDeletePost()'>
+            <span class="glyphicon glyphicon-remove icon"></span>
+        </button>
+    </div>
+
+    <form class="form-horizontal" (ngSubmit)="handleSubmit(category.value, publish.value, title.value, body.value, subtitle?.value)"
+        #editForm="ngForm" novalidate>
 
         <div class="panel-heading">
             <h1 class="panel-title">
@@ -82,5 +89,5 @@
             </div>
 
         </div>
-    </div>
-</form>
+    </form>
+</div>

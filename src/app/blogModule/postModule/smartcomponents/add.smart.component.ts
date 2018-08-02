@@ -19,7 +19,9 @@ export class AddSmartComponent implements OnInit {
 
     // triggers when adding a post is done, then tells the view to show the posts again
     @Output()
-    finishEmitter : EventEmitter<any> = new EventEmitter();
+    finishEmitter: EventEmitter<any> = new EventEmitter();
+
+
 
     constructor(
         private userservice: UserService
@@ -30,8 +32,8 @@ export class AddSmartComponent implements OnInit {
         this.currentUser = this.userservice.currentUser;
     }
 
-    newPost (post : Post) {
-        this.userservice.addPost (post).subscribe();
+    newPost(post: Post) {
+        this.userservice.addPost(post).subscribe();
         this.finishEmitter.emit();
     }
 }

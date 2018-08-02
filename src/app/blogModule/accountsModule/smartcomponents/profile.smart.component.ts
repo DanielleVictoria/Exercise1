@@ -14,7 +14,6 @@ import { UserService } from '../../_service/user.service';
 })
 export class ProfileSmartComponent implements OnInit{
 
-  @Input()
   user : User;
 
   constructor (
@@ -22,7 +21,7 @@ export class ProfileSmartComponent implements OnInit{
   }
 
   ngOnInit () {
-
+    this.user = this.userservice.currentUser;
   }
 
   editUser(user : User) {
